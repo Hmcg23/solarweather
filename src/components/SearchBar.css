@@ -1,0 +1,33 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dataResult {
+    margin-top: 10px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.dataResult::-webkit-scrollbar {
+    display: none;
+}
+
+.dataResult .dataItem {
+    max-width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.dataResult .dataItem:hover {
+    color: white;
+     background-color: #001D7C;
+}
