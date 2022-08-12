@@ -19,8 +19,10 @@ function SearchBar({placeholder, cityData}) {
 
   return (
       <div className="searchBar">
-        <div className='searchIcon'><SearchIcon /></div>
-        <h2>Search for any city</h2>
+        <div className="searchText">
+            <SearchIcon className="searchIcon"/>
+            <h1>Search for any city</h1>
+        </div>
         <input type="text" placeholder={placeholder} onChange={handleChange}/>
         {
             filteredData.length !== 0 && (

@@ -1,13 +1,42 @@
 .searchBar {
     display: flex;
     align-items: center;
+    justify-content: center;
+    max-width: 30%;
     flex-direction: column;
 }
+
+.searchText {
+    display: flex;
+    align-items: center;
+    color: #001D7C;
+    font-size: 15px;
+    margin: 0;
+}
+
+.searchText .searchIcon {
+    width: 3vw;
+    height: 3vw;
+}
+
+.searchBar input {
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    background-color: #FFE283;
+    border: 2px solid #001D7C;
+    border-radius: 5px;
+    color: #001D7C;
+    font-family: 'Gilroy', 'Poppins';
+}
+
+/* Search Bar Data Styles */
 
 .dataResult {
     margin-top: 10px;
     width: 300px;
     height: 200px;
+    border-radius: 10px;
     overflow: hidden;
     overflow-y: auto;
     background-color: white;
