@@ -32,3 +32,15 @@ header .weatherIcon {
   margin-right: 1vw;
   color: #001D7C;
 }
+
+.components {
+  display: flex;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+}

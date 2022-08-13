@@ -1,0 +1,55 @@
+.favorites {
+    color: #001D7C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #001D7C;
+    margin: 20px;
+    border-radius: 10px;
+    max-height: 77vh;
+    max-width: 15%;
+}
+
+.favorites h1 {
+    margin: 0 10px;
+}
+
+main {
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.favoriteLocationItem {
+    display: flex;
+    width: 12vw;
+    height: 70px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.favoriteLocationItem .mainText {
+    display: flex;
+    flex-direction: column;
+}
+
+.favoriteLocationItem .mainText p, .favoriteLocationItem .mainText h2  {
+    margin: 0;
+    align-self: flex-start;
+}
+
+.favoriteLocationItem .mainText h2  {
+    font-size: 1.3vw;
+}
+
+.favoriteLocationItem > h2 {
+    align-self:center ;
+    font-size: 30px;
+}

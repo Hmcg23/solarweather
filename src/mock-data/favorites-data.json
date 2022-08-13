@@ -1,0 +1,76 @@
+[{
+    "id": 1,
+    "city_name": "Nkove",
+    "temperature": 59,
+    "time": "2:04 AM"
+  }, {
+    "id": 2,
+    "city_name": "Chonglou",
+    "temperature": 60,
+    "time": "12:31 AM"
+  }, {
+    "id": 3,
+    "city_name": "Kafachan",
+    "temperature": 69,
+    "time": "3:18 AM"
+  }, {
+    "id": 4,
+    "city_name": "Kuantan",
+    "temperature": 81,
+    "time": "12:49 PM"
+  }, {
+    "id": 5,
+    "city_name": "Gibato",
+    "temperature": 93,
+    "time": "10:39 PM"
+  }, {
+    "id": 6,
+    "city_name": "Juàzeirinho",
+    "temperature": 57,
+    "time": "1:11 AM"
+  }, {
+    "id": 7,
+    "city_name": "Buaran",
+    "temperature": 64,
+    "time": "3:50 PM"
+  }, {
+    "id": 8,
+    "city_name": "Lavrica",
+    "temperature": 6,
+    "time": "3:02 AM"
+  }, {
+    "id": 9,
+    "city_name": "Bihać",
+    "temperature": 64,
+    "time": "7:12 AM"
+  }, {
+    "id": 10,
+    "city_name": "Wansheng",
+    "temperature": 6,
+    "time": "10:41 PM"
+  }, {
+    "id": 11,
+    "city_name": "Марино",
+    "temperature": 11,
+    "time": "1:25 PM"
+  }, {
+    "id": 12,
+    "city_name": "Currais Novos",
+    "temperature": 45,
+    "time": "6:34 AM"
+  }, {
+    "id": 13,
+    "city_name": "Sumberpucung",
+    "temperature": 52,
+    "time": "4:17 AM"
+  }, {
+    "id": 14,
+    "city_name": "Johanneshov",
+    "temperature": 63,
+    "time": "2:37 PM"
+  }, {
+    "id": 15,
+    "city_name": "Mejdan - Obilićevo",
+    "temperature": 7,
+    "time": "8:30 AM"
+  }]
