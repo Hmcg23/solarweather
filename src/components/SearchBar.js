@@ -8,7 +8,7 @@ function SearchBar({placeholder, cityData}) {
   const handleChange = (event) => {
     const searchValue = event.target.value;
     const newFilter = cityData.filter(item => {
-        return item.city_name.toLowerCase().includes(searchValue.toLowerCase());
+        return item.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     if (searchValue === "") {
         setFilteredData([]);
@@ -28,8 +28,8 @@ function SearchBar({placeholder, cityData}) {
             filteredData.length !== 0 && (
                 <div className="dataResult">
                     {
-                    filteredData.slice(0, 15).map((city) => (
-                        <p key={city.id} className="dataItem">{city.city_name}</p>
+                    filteredData.slice(0, 15).map((city, id) => (
+                        <p key={id} className="dataItem">{city.name}, {city.country}</p>
                     ))
                     }
                 </div>                
