@@ -12,7 +12,7 @@ function App() {
 
   const [city, setCity] = useState('London');
   const [imperial, setImperial] = useState('imperial')
-  const [selectedCityData, setSelectedCityData] = useState('');
+  const [selectedCityData, setSelectedCityData] = useState({});
 
   useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${imperial}`)
@@ -24,6 +24,7 @@ function App() {
     })
     .then(data => {
       setSelectedCityData(data);
+      console.log(data);
     })
     .catch(error => {
       console.log("There was an error with your request");
