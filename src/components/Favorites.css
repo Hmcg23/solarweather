@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     border: 3px solid #001D7C;
-    margin: 20px;
+    margin: 0 20px;
     border-radius: 10px;
-    max-height: 77vh;
+    max-height: 80vh;
     max-width: 15%;
 }
 

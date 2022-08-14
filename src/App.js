@@ -45,8 +45,8 @@ function App() {
       </header>
       <div className="components">
         <Favorites />
-        <SearchBar placeholder="London, GB" cityData={cities} />
         <UpcomingForecasts selectedCityData={selectedCityData}/>
+        <SearchBar placeholder="London, GB" cityData={cities} />
       </div>
     </div>
   );

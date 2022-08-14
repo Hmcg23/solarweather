@@ -1,6 +1,4 @@
 import "./UpcomingForecasts.css";
-import AirTwoToneIcon from '@mui/icons-material/AirTwoTone';
-
 
 function UpcomingForecasts(selectedCityData) {
 
@@ -30,21 +28,25 @@ function UpcomingForecasts(selectedCityData) {
     }
 
     return (
-        <div className="mainData">
-            <AirTwoToneIcon className="windIcon"/>
-            <h1>Upcoming Forecasts</h1>
+        <div className="upcomingForecasts">
+            <div className="title">
+                <h1>Upcoming Forecasts</h1>
+            </div>
             {/* Daily Weather Data */}
-            {cityData && cityData.list.map((item, index) => (
-                includesHour(item.dt_txt) === true ?
-                <div key={index}>
-                    <h2>{dayOfTheWeek(item.dt_txt)}</h2>
-                    <h3>{Math.floor(item.main.temp)}°</h3>
-                    <p>{currentHour > 12 ? `${currentHour - 12} PM` : `${currentHour} AM`}</p>
-                    <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather"></img>      
-                    <p>{item.weather[0].description}</p>              
-                </div> : 
-                <div key={index}></div>
-            ))}
+            <main className="dailyWeatherData">
+                {cityData && cityData.list.map((item, index) => (
+                    includesHour(item.dt_txt) === true ?
+                    <div key={index} className="tempBox">
+                        <h2>{dayOfTheWeek(item.dt_txt)}</h2>
+                        <h3>{Math.floor(item.main.temp)}°</h3>
+                        {/* <p>{currentHour > 12 ? `${currentHour - 12} PM` : currentHour === 0 ? `${currentHour + 1} AM` : `${currentHour} AM`}</p> */}
+                        <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather" className="weatherIcon"></img>      
+                        <h3>{item.weather[0].description}</h3>              
+                    </div> : 
+                    <div key={index}></div>
+                ))}                
+            </main>
+
         </div>
     )
 }
