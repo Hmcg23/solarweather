@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar';
 import Favorites from './components/Favorites';
 import cities from 'cities.json';
 import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
-import MainData from './components/MainData';
+import UpcomingForecasts from './components/UpcomingForecasts';
 
 function App() {
 
@@ -12,16 +12,19 @@ function App() {
 
   const [city, setCity] = useState('London');
   const [imperial, setImperial] = useState('imperial')
-  const [selectedCityData, setSelectedCityData] = useState({});
+  const [selectedCityData, setSelectedCityData] = useState('');
 
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${imperial}`)
-    .then(response => {
-      if (response.ok) {
-        console.log('Success');
+    const fetchData = async () => {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${imperial}`)
+      if (!response.ok) {
+        throw new Error('Data coud not be fetched!');
+      } else {
         return response.json();
       }
-    })
+    }
+
+    fetchData()
     .then(data => {
       setSelectedCityData(data);
       console.log(data);
@@ -43,7 +46,7 @@ function App() {
       <div className="components">
         <Favorites />
         <SearchBar placeholder="London, GB" cityData={cities} />
-        <MainData selectedCityData={selectedCityData}/>
+        <UpcomingForecasts selectedCityData={selectedCityData}/>
       </div>
     </div>
   );
