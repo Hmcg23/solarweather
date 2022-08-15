@@ -15,7 +15,7 @@ function Map(selectedCityData) {
                 <h1>Need a map?</h1>
             </div>
             <div className="leaflet-map">
-                <MapContainer center={coordinates} zoom={10} scrollWheelZoom={true} >
+                <MapContainer center={coordinates === [36.6666, -119.8343] ? coordinates : coordinates} zoom={10} scrollWheelZoom={true} >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

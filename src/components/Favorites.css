@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
-    max-height: 80vh;
+    max-height: 78vh;
     max-width: 15%;
 }
 
@@ -56,6 +56,10 @@ main::-webkit-scrollbar {
 .favoriteLocationItem > h2 {
     align-self:center ;
     font-size: 30px;
+}
+
+.favorites header {
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {

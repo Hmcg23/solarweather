@@ -12,13 +12,13 @@ function App() {
 
   const apiKey = "ac2bee7b7a1e7d98c8132927d1c4cccb";
 
-  const [city, setCity] = useState('Fresno');
-  const [imperial, setImperial] = useState('imperial')
+  const [city, setCity] = useState('London');
+  const [units, setUnits] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${imperial}`)
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`)
       if (!response.ok) {
         throw new Error('Data coud not be fetched!');
       } else {
@@ -34,7 +34,7 @@ function App() {
     .catch(error => {
       console.log("There was an error with your request");
     })
-  }, [city, imperial]);
+  }, [city, units]);
 
   return (
     <div className="App">
@@ -52,6 +52,9 @@ function App() {
         <MainData selectedCityData={selectedCityData} />
         <Map selectedCityData={selectedCityData} />
       </div>
+      <button onClick={() => {
+        units === 'imperial' ? setUnits('metric') : setUnits('imperial')
+      }}><h1>C | F</h1></button>
     </div>
   );
 }

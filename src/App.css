@@ -37,6 +37,23 @@ header .weatherIcon {
   display: flex;
   justify-content: space-around;
 }
+
+button {
+  position:absolute;
+  top: 15vh;
+  left: 1vw;
+  background-color: #FFE283;
+  border: 3px solid #001D7C;
+  color: #001D7C;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #001D7C;
+  color: #FFE283;
+}
 /* Responsive Styles */
 
 @media only screen and (max-width: 600px) {
