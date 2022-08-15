@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import Favorites from './components/Favorites';
+import Map from './components/Map';
 import cities from 'cities.json';
 import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
 import UpcomingForecasts from './components/UpcomingForecasts';
@@ -10,7 +11,7 @@ function App() {
 
   const apiKey = "ac2bee7b7a1e7d98c8132927d1c4cccb";
 
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useState('Los Angeles');
   const [imperial, setImperial] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
 
@@ -47,6 +48,7 @@ function App() {
         <Favorites />
         <UpcomingForecasts selectedCityData={selectedCityData}/>
         <SearchBar placeholder="London, GB" cityData={cities} />
+        <Map selectedCityData={selectedCityData} />
       </div>
     </div>
   );
