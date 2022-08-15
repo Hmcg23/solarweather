@@ -1,5 +1,5 @@
-import { current } from "@reduxjs/toolkit";
 import "./UpcomingForecasts.css";
+import AirRoundedIcon from '@mui/icons-material/AirRounded';
 
 function UpcomingForecasts(selectedCityData) {
 
@@ -38,6 +38,7 @@ function UpcomingForecasts(selectedCityData) {
     return (
         <div className="upcomingForecasts">
             <div className="title">
+                <AirRoundedIcon />
                 <h1>Forecasts</h1>
             </div>
             {/* Daily Weather Data */}

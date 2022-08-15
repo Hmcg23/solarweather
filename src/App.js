@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import Favorites from './components/Favorites';
 import Map from './components/Map';
+import MainData from './components/MainData';
 import cities from 'cities.json';
 import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
 import UpcomingForecasts from './components/UpcomingForecasts';
@@ -28,6 +29,7 @@ function App() {
     fetchData()
     .then(data => {
       setSelectedCityData(data);
+      console.log(data);
     })
     .catch(error => {
       console.log("There was an error with your request");
@@ -43,10 +45,11 @@ function App() {
           <p>Find what you need about any city</p>          
         </div>
       </header>
-        <SearchBar placeholder="London, GB" cityData={cities} />
+      <SearchBar placeholder="London, GB" cityData={cities} />
       <div className="components">
         <Favorites />
         <UpcomingForecasts selectedCityData={selectedCityData}/>
+        <MainData selectedCityData={selectedCityData} />
         <Map selectedCityData={selectedCityData} />
       </div>
     </div>
