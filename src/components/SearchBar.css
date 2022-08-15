@@ -1,7 +1,7 @@
 .searchBar {
     display: flex;
     align-items: center;
-    width: 33vw;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .searchBar input {
-    width: 90%;
+    width: 50%;
     height: 40px;
     font-size: 20px;
     background-color: #FFE283;
@@ -63,7 +63,7 @@
 /* Responsive Styles */
 
 @media only screen and (max-width: 600px) {
-    .searchBar {
-        max-width: 100%;
+    .searchBar input {
+        width: 90%;
     }
 }

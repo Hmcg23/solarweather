@@ -35,12 +35,27 @@ header .weatherIcon {
 
 .components {
   display: flex;
+  justify-content: space-around;
 }
-
 /* Responsive Styles */
 
 @media only screen and (max-width: 600px) {
   header {
     justify-content: center;
+  }
+  .headerText h1 {
+    font-size: 10vw;
+  }
+  .headerText p {
+    font-size: 3vw;
+  }
+  header .weatherIcon {
+    width: 100px;
+    height: 100px;
+  }
+  .components {
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
   }
 }

@@ -1,8 +1,11 @@
+import { current } from "@reduxjs/toolkit";
 import "./UpcomingForecasts.css";
 
 function UpcomingForecasts(selectedCityData) {
 
     const cityData = selectedCityData.selectedCityData;
+
+    console.log(cityData);
 
     const d = new Date();
 
@@ -12,12 +15,11 @@ function UpcomingForecasts(selectedCityData) {
         currentHour++;
     }
 
-
     const includesHour = (string) => {
         const hourInDay = 
-        currentHour < 10 ? `0${currentHour}:00:00` 
+        currentHour < 10 ? `0${currentHour}:00:00`
+        : currentHour === 24 ? `12:00:00`  
         : currentHour > 12 ? `0${currentHour - 12}:00:00`
-        : currentHour === 24 ? `00:00:00` 
         : `${currentHour}:00:00`;
         if (string.includes(hourInDay)) {
             return true;
@@ -36,7 +38,7 @@ function UpcomingForecasts(selectedCityData) {
     return (
         <div className="upcomingForecasts">
             <div className="title">
-                <h1>Upcoming Forecasts</h1>
+                <h1>Forecasts</h1>
             </div>
             {/* Daily Weather Data */}
             <main className="dailyWeatherData">

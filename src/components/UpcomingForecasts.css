@@ -1,8 +1,6 @@
 .upcomingForecasts {
-    max-width: 15%;
-    max-height: 80vh;
-    border: 3px solid #001D7C;
-    border-radius: 10px;
+    width: 20%;
+    max-height: 85vh;
 }
 
 .title {
@@ -11,6 +9,8 @@
 }
 .dailyWeatherData {
     max-height: 85%;
+    border: 3px solid #001D7C;
+    border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -36,4 +36,16 @@ h2, h3 {
 .weatherIcon {
     width: 70px;
     height: 70px;
+}
+
+@media only screen and (max-width: 600px) {
+    .upcomingForecasts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;        
+    }
+    main {
+        width: 90vw;
+    }
 }

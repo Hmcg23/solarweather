@@ -7,9 +7,7 @@ function Map(selectedCityData) {
     const cityData = selectedCityData.selectedCityData;
 
     const coordinates = cityData.city ? [cityData.city.coord.lat, cityData.city.coord.lon] : [36.6666, -119.8343];
-
-    console.log(coordinates);
-
+    
     return (
         <div className='map'>
             <div className="title">

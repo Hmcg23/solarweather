@@ -43,10 +43,10 @@ function App() {
           <p>Find what you need about any city</p>          
         </div>
       </header>
+        <SearchBar placeholder="London, GB" cityData={cities} />
       <div className="components">
         <Favorites />
         <UpcomingForecasts selectedCityData={selectedCityData}/>
-        <SearchBar placeholder="London, GB" cityData={cities} />
         <Map selectedCityData={selectedCityData} />
       </div>
     </div>
