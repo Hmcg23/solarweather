@@ -11,7 +11,7 @@ function App() {
 
   const apiKey = "ac2bee7b7a1e7d98c8132927d1c4cccb";
 
-  const [city, setCity] = useState('Los Angeles');
+  const [city, setCity] = useState('Fresno');
   const [imperial, setImperial] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
 
@@ -28,7 +28,6 @@ function App() {
     fetchData()
     .then(data => {
       setSelectedCityData(data);
-      console.log(data);
     })
     .catch(error => {
       console.log("There was an error with your request");

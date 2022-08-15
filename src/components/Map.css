@@ -1,4 +1,26 @@
-.leaflet-container {
+.map {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: space-between;
+}
+
+.leaflet-map {
+    border: 3px solid #001D7C;
     width: 30vw;
-    height: 30vh;
+    max-height: 70vh;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

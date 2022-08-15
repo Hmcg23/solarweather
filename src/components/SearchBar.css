@@ -1,7 +1,7 @@
 .searchBar {
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 33vw;
     flex-direction: column;
 }
 
@@ -23,7 +23,7 @@
     height: 40px;
     font-size: 20px;
     background-color: #FFE283;
-    border: 2px solid #001D7C;
+    border: 3px solid #001D7C;
     border-radius: 5px;
     color: #001D7C;
     font-family: 'Gilroy', 'Poppins';

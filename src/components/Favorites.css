@@ -47,6 +47,7 @@ main::-webkit-scrollbar {
 
 .favoriteLocationItem .mainText h2  {
     font-size: 1.3vw;
+    padding: 0;
 }
 
 .favoriteLocationItem > h2 {
