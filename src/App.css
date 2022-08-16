@@ -68,7 +68,33 @@ button:hover {
   background-color: #001D7C;
   color: #FFE283;
 }
+
+.firstTwo {
+  display: flex;
+}
 /* Responsive Styles */
+
+@media only screen and (max-width: 1100px) {
+  .headerText h1 {
+    font-size: 7vw;
+  }
+
+  .components {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .currentDate {
+    font-size: 5vw;
+    top: 10px;
+    right: 10px
+  }
+  .clock {
+    font-size: 3.5vw;
+    top: 6.5vw;
+    right: 10px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .headerText h1 {
@@ -83,8 +109,8 @@ button:hover {
   }
   .components {
     flex-direction: column;
-    justify-content: baseline;
     align-items: center;
+    
   }
   button {
     position:static;
