@@ -59,7 +59,8 @@
 
 .dataResult .dataItem:hover {
     color: white;
-     background-color: #001D7C;
+    background-color: #001D7C;
+    cursor: pointer;
 }
 
 /* Responsive Styles */

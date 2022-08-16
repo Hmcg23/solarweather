@@ -2,7 +2,7 @@ import './SearchBar.css';
 import { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
-function SearchBar({placeholder, cityData}) {
+function SearchBar({placeholder, cityData, getCityFromSearch}) {
   const [filteredData, setFilteredData] = useState([]);
   const [city, setCity] = useState('');
 
@@ -28,14 +28,14 @@ function SearchBar({placeholder, cityData}) {
             <SearchIcon className="searchIcon"/>
             <h1>Search for any city</h1>
         </div>
-        <input type="text" placeholder={placeholder} onChange={handleChange}/>
+        <input type="text" placeholder=" London, GB" onChange={handleChange}/>
         {
             filteredData.length !== 0 && (
                 <div className="dataResult">
                     {
                     filteredData.slice(0, 15).map((city, id) => (
                         <p key={id} className="dataItem" onClick={() => {
-                            setCity(`${city.name}, ${city.country}`)
+                            getCityFromSearch(city.name, city.country);
                         }}>{city.name}, {city.country}</p>
                     ))
                     }

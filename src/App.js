@@ -13,10 +13,13 @@ function App() {
 
   const apiKey = "ac2bee7b7a1e7d98c8132927d1c4cccb";
 
-  const [city, setCity] = useState('Los Angeles, US');
+  const [city, setCity] = useState('London');
   const [units, setUnits] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
 
+  const getCityFromSearch = (searchedCity) => {
+    setCity(searchedCity);
+  }
 
 
   useEffect(() => {
@@ -54,7 +57,7 @@ function App() {
         units === 'imperial' ? setUnits('metric') : setUnits('imperial')
       }}><h1>C | F</h1>
       </button>
-      <SearchBar placeholder="London, GB" cityData={cities} />
+      <SearchBar cityData={cities} getCityFromSearch={getCityFromSearch}/>
       <div className="components">
         <MainData selectedCityData={selectedCityData} units={units}/>
         <UpcomingForecasts selectedCityData={selectedCityData}/>        
