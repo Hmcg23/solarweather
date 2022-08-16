@@ -46,7 +46,6 @@ function UpcomingForecasts(selectedCityData) {
                     <div key={index} className="tempBox">
                         <h2>{dayOfTheWeek(item.dt_txt)}</h2>
                         <h3>{Math.floor(item.main.temp)}°</h3>
-                        <p>{item.dt_txt}</p>
                         <p>{currentHour > 12 ? `${currentHour - 12} PM` : currentHour === 0 ? `${currentHour + 1} AM` : `${currentHour} AM`}</p>
                         <img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="weather" className="weatherIcon"></img>      
                         <h3>{item.weather[0].description}</h3>              

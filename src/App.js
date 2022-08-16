@@ -65,9 +65,9 @@ function App() {
       </button>
       <SearchBar placeholder="London, GB" cityData={cities} />
       <div className="components">
-        <Favorites />
-        <UpcomingForecasts selectedCityData={selectedCityData}/>
         <MainData selectedCityData={selectedCityData} units={units}/>
+        <UpcomingForecasts selectedCityData={selectedCityData}/>        
+        <Favorites />
         <Map selectedCityData={selectedCityData} />
       </div>
 
