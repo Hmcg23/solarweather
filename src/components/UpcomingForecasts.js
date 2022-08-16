@@ -5,8 +5,6 @@ function UpcomingForecasts(selectedCityData) {
 
     const cityData = selectedCityData.selectedCityData;
 
-    console.log(cityData);
-
     const d = new Date();
 
     let currentHour = d.getHours();

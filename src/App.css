@@ -16,6 +16,20 @@ header {
   color: #001D7C;
 }
 
+.clock {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  font-size: 30px;
+}
+
+.currentDate {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+}
+
 .headerText h1 {
   margin: 0;
   font-size: 50px;
@@ -40,7 +54,7 @@ header .weatherIcon {
 
 button {
   position:absolute;
-  top: 15vh;
+  top: 120px;
   left: 1vw;
   background-color: #FFE283;
   border: 3px solid #001D7C;
@@ -57,22 +71,32 @@ button:hover {
 /* Responsive Styles */
 
 @media only screen and (max-width: 600px) {
-  header {
-    justify-content: center;
-  }
   .headerText h1 {
-    font-size: 10vw;
+    font-size: 7vw;
   }
   .headerText p {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
   header .weatherIcon {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
   }
   .components {
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+  }
+  button {
+    position:static;
+  }
+  .currentDate {
+    font-size: 5vw;
+    top: 10px;
+    right: 10px
+  }
+  .clock {
+    font-size: 3.5vw;
+    top: 40px;
+    right: 10px;
   }
 }

@@ -1,6 +1,6 @@
 .mainData {
     width: 30%;
-    height: 72vh;
+    height: fit-content;
 }
 
 .mainData main {
@@ -8,4 +8,25 @@
     height: 100%;
     border: 3px solid #001D7C;
     border-radius: 10px;
+}
+
+#mainTemp {
+    font-size: 80px;
+}
+
+.mainData img {
+    width: 100px;
+    height: 100px;
+}
+
+.tempData {
+    background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainData {
+        width: 90%;
+    }
 }
