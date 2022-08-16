@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import Favorites from './components/Favorites';
+import Clock from './components/Clock';
 import Map from './components/Map';
 import MainData from './components/MainData';
 import cities from 'cities.json';
@@ -12,22 +13,13 @@ function App() {
 
   const apiKey = "ac2bee7b7a1e7d98c8132927d1c4cccb";
 
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useState('Los Angeles, US');
   const [units, setUnits] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
-  const [clock, setClock] = useState('');
-  const [currentDate, setCurrentDate] = useState('');
 
 
 
   useEffect(() => {
-    setInterval(() => {
-    const date = new Date();
-      setClock(date.toLocaleTimeString());
-      setCurrentDate(date.toLocaleDateString());
-    }, 1000)
-
-
     const fetchData = async () => {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`)
       if (!response.ok) {
@@ -56,9 +48,8 @@ function App() {
           <h1>SolarWeather</h1>
           <p>Find what you need about any city</p>     
         </div>
-          <h1 className="clock">{clock}</h1>
-          <h2 className="currentDate">{currentDate}</h2>
       </header>
+      <Clock />
       <button onClick={() => {
         units === 'imperial' ? setUnits('metric') : setUnits('imperial')
       }}><h1>C | F</h1>

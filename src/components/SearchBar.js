@@ -1,9 +1,10 @@
 import './SearchBar.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar({placeholder, cityData}) {
   const [filteredData, setFilteredData] = useState([]);
+  const [city, setCity] = useState('');
 
   const handleChange = (event) => {
     const searchValue = event.target.value;
@@ -17,6 +18,10 @@ function SearchBar({placeholder, cityData}) {
     }
   }
 
+  useEffect(() => {
+    console.log(city);
+  }, [city])
+
   return (
       <div className="searchBar">
         <div className="searchText">
@@ -29,7 +34,9 @@ function SearchBar({placeholder, cityData}) {
                 <div className="dataResult">
                     {
                     filteredData.slice(0, 15).map((city, id) => (
-                        <p key={id} className="dataItem">{city.name}, {city.country}</p>
+                        <p key={id} className="dataItem" onClick={() => {
+                            setCity(`${city.name}, ${city.country}`)
+                        }}>{city.name}, {city.country}</p>
                     ))
                     }
                 </div>                
