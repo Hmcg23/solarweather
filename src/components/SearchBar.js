@@ -13,7 +13,7 @@ function SearchBar({getDataFromSearch}) {
   const handleChange = (event) => {
     setSearchValue(event.target.value);
     const newFilter = allCities.filter(item => {
-        return item.name.toLowerCase().includes(searchValue.toLowerCase()) || item.countryCode.toLowerCase().includes(searchValue.toLowerCase());
+        return `${item.name}, ${item.countryCode}`.toLowerCase().includes(searchValue.toLowerCase());
     });
     setFilteredData(newFilter);
   }
