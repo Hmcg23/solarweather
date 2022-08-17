@@ -1,6 +1,6 @@
 # 🌥 SolarWeather
 
-SolarWeather is a website you can use to find the weather data you need for any city in the world
+## **SolarWeather is a website you can use to find the weather data you need for any city in the world**
 
 <img src="./src/images/website-screenshot.png"/>
 
