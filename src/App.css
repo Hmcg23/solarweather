@@ -61,6 +61,7 @@ button {
   color: #001D7C;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .firstTwo {
