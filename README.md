@@ -7,8 +7,6 @@ SolarWeather is a website you can use to find the weather data you need for any 
 
 ## 🔐 Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
 In the project directory, you can run:
 ```bash
 npm start
