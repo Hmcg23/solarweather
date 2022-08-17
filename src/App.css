@@ -63,12 +63,6 @@ button {
   transition: 0.2s ease-in-out;
 }
 
-button:hover {
-  cursor: pointer;
-  background-color: #001D7C;
-  color: #FFE283;
-}
-
 .firstTwo {
   display: flex;
 }
@@ -114,6 +108,7 @@ button:hover {
   }
   button {
     position:static;
+    font-size: 10px;
   }
   .currentDate {
     font-size: 5vw;

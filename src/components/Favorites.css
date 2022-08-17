@@ -36,26 +36,7 @@ main::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-}
-
-.favoriteLocationItem .mainText {
-    display: flex;
-    flex-direction: column;
-}
-
-.favoriteLocationItem .mainText p, .favoriteLocationItem .mainText h2  {
-    margin: 0;
-    align-self: flex-start;
-}
-
-.favoriteLocationItem .mainText h2  {
-    font-size: 18px;
-    padding: 0;
-}
-
-.favoriteLocationItem > h2 {
-    align-self:center ;
-    font-size: 30px;
+    cursor: pointer;
 }
 
 .favorites header {

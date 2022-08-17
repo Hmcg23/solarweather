@@ -63,7 +63,7 @@ function App() {
       <div className="components">
         <MainData selectedCityData={selectedCityData} units={units}/>
         <UpcomingForecasts selectedCityData={selectedCityData}/>        
-        <Favorites />
+        <Favorites getDataFromSearch={getDataFromSearch} />
         <Map selectedCityData={selectedCityData} cityCoordinates={cityCoordinates} />
       </div>
 

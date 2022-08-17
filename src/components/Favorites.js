@@ -1,25 +1,20 @@
 import './Favorites.css';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
-import favoritesData from '../mock-data/favorites-data.json';
 
-function Favorites() {
+function Favorites({getDataFromSearch}) {
+
+    const popularCities = ['Tokyo, JP', 'London, GB', 'Los Angeles, US', 'New York, US', 'Dubai, AE', 'Mexico City, MX', 'Paris, FR', 'Istanbul, TR']
 
   return (
     <div className="favorites">
         <header>
             <FavoriteRoundedIcon />
-            <h1>Favorites</h1>            
+            <h1>Cities</h1>            
         </header>
         <main>
             {
-            favoritesData.map(item => (
-                <div key={item.id} className="favoriteLocationItem">
-                    <div className="mainText">
-                        <h2>{item.city_name}</h2>
-                        <p>{item.time}</p>                        
-                    </div>
-                    <h2>{item.temperature}</h2>
-                </div>
+            popularCities.map((item, index) => (
+                <h2 key={index} className="favoriteLocationItem" onClick={() => {getDataFromSearch(item)}}>{item}</h2>
             ))
             }
         </main>

@@ -2,11 +2,11 @@ import './Map.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-function Map({selectedCityData, cityCoordinates}) {
+function Map({selectedCityData}) {
 
     const cityData = selectedCityData;
 
-    console.log(cityCoordinates);
+    const coordinates = cityData.city ? [cityData.city.coord.lat, cityData.city.coord.lon] : [0, 0];
 
     
     return (
@@ -16,13 +16,13 @@ function Map({selectedCityData, cityCoordinates}) {
                 <h1>Need a map?</h1>
             </div>
             <div className="leaflet-map">
-                <MapContainer center={cityCoordinates} zoom={10} scrollWheelZoom={true} >
-                    <ChangeMapView center={cityCoordinates} />
+                <MapContainer center={coordinates} zoom={10} scrollWheelZoom={true} >
+                    <ChangeMapView center={coordinates} />
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={cityCoordinates}>
+                    <Marker position={coordinates}>
                         <Popup>
                         {cityData ? `${cityData.city.name}, ${cityData.city.country}` : ''}
                         </Popup>
