@@ -1,23 +1,9 @@
 import './MainData.css'
 import LocationCityRoundedIcon from '@mui/icons-material/LocationCityRounded';
 
-function MainData(selectedCityData, units) {
+function MainData({selectedCityData, units}) {
 
-    const cityData = selectedCityData.selectedCityData;
-
-    const d = new Date();
-
-    const currentDay = `${d.getFullYear()}-${(d.getMonth() + 1) < 10 ? `0${d.getMonth() + 1}` : d.getMonth() + 1}-${d.getDate()}`;
-
-    let currentHour = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
-
-    while (currentHour % 3 !== 0) {
-        currentHour++;
-    }
-
-    const formattedDay = `${currentDay} ${currentHour < 10 ? `0${currentHour}:00:00`: `${currentHour}:00:00`}`;
-
-    console.log(formattedDay);
+    const cityData = selectedCityData;
 
     return (
         <div className="mainData">
@@ -33,7 +19,7 @@ function MainData(selectedCityData, units) {
                     <h3>{cityData ? cityData.list[0].weather[0].description : ''}</h3>
                     <h2>Feels Like: {cityData ? Math.floor(cityData.list[0].main.feels_like) : ''}</h2>
                     <h2>Humidity: {cityData ? Math.floor(cityData.list[0].main.humidity) : ''}</h2>
-                    <h2>Wind Speed: {cityData ? Math.floor(cityData.list[0].wind.speed) : ''} {units === 'metric' ? 'mph' : 'm/s'}</h2>                    
+                    <h2>Wind Speed: {cityData ? Math.floor(cityData.list[0].wind.speed) : ''} {units === 'imperial' ? 'mph' : 'm/s'}</h2>                    
                 </div>
 
             </main>

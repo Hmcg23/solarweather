@@ -1,15 +1,17 @@
 import './SearchBar.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { City }  from 'country-state-city';
 
-function SearchBar({placeholder, cityData, getCityFromSearch}) {
+function SearchBar({getDataFromSearch}) {
   const [filteredData, setFilteredData] = useState([]);
-  const [city, setCity] = useState('');
+
+  const allCities = City.getAllCities()
 
   const handleChange = (event) => {
     const searchValue = event.target.value;
-    const newFilter = cityData.filter(item => {
-        return item.name.toLowerCase().includes(searchValue.toLowerCase());
+    const newFilter = allCities.filter(item => {
+        return item.name.toLowerCase().includes(searchValue.toLowerCase()) || item.countryCode.toLowerCase().includes(searchValue.toLowerCase());
     });
     if (searchValue === "") {
         setFilteredData([]);
@@ -18,9 +20,6 @@ function SearchBar({placeholder, cityData, getCityFromSearch}) {
     }
   }
 
-  useEffect(() => {
-    console.log(city);
-  }, [city])
 
   return (
       <div className="searchBar">
@@ -35,8 +34,8 @@ function SearchBar({placeholder, cityData, getCityFromSearch}) {
                     {
                     filteredData.slice(0, 15).map((city, id) => (
                         <p key={id} className="dataItem" onClick={() => {
-                            getCityFromSearch(city.name, city.country);
-                        }}>{city.name}, {city.country}</p>
+                            getDataFromSearch(`${city.name}, ${city.countryCode}`, [parseFloat(city.latitude), parseFloat(city.longitude)]);
+                        }}>{city.name}, {city.countryCode}</p>
                     ))
                     }
                 </div>                

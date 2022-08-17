@@ -16,9 +16,11 @@ function App() {
   const [city, setCity] = useState('London');
   const [units, setUnits] = useState('imperial')
   const [selectedCityData, setSelectedCityData] = useState('');
+  const [cityCoordinates, setCitycoordinates] = useState([51.5085, -0.1257]);
 
-  const getCityFromSearch = (searchedCity) => {
+  const getDataFromSearch = (searchedCity, coordinates) => {
     setCity(searchedCity);
+    setCitycoordinates(coordinates);
   }
 
 
@@ -57,12 +59,12 @@ function App() {
         units === 'imperial' ? setUnits('metric') : setUnits('imperial')
       }}><h1>C | F</h1>
       </button>
-      <SearchBar cityData={cities} getCityFromSearch={getCityFromSearch}/>
+      <SearchBar cityData={cities} getDataFromSearch={getDataFromSearch}/>
       <div className="components">
         <MainData selectedCityData={selectedCityData} units={units}/>
         <UpcomingForecasts selectedCityData={selectedCityData}/>        
         <Favorites />
-        <Map selectedCityData={selectedCityData} />
+        <Map selectedCityData={selectedCityData} cityCoordinates={cityCoordinates} />
       </div>
 
     </div>

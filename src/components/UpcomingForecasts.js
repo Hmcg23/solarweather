@@ -1,9 +1,9 @@
 import "./UpcomingForecasts.css";
 import AirRoundedIcon from '@mui/icons-material/AirRounded';
 
-function UpcomingForecasts(selectedCityData) {
+function UpcomingForecasts({selectedCityData}) {
 
-    const cityData = selectedCityData.selectedCityData;
+    const cityData = selectedCityData;
 
     const d = new Date();
 
